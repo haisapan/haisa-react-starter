@@ -1,43 +1,44 @@
-import React from "react";
+import React from 'react';
 import ReactDOM from "react-dom";
-import {Link, IndexLink } from 'react-router';
+import { Link, IndexLink } from 'react-router';
 
 
 // import MyForm from '../MyForm/myForm';
 
 
-var dataList = [
+let dataList = [
     {
         id: 1,
-        name: "#1 item"
+        name: '#1 item',
     },
     {
         id: 2,
-        name: "#2 item"
-    }
-]
+        name: '#2 item',
+    },
+];
 
-var App = React.createClass({
-    getInitialState: function () {
+const App = React.createClass({
+    getInitialState() {
         return {
             columns: [],
-            name: "haisa's name is great!"
-        }
-    },
-    childContextTypes: {
-        disabled: React.PropTypes.string
-    },
-    getChildContext: function () {
-        return {
-            disabled: "true"
-        }
+            name: "haisa's name is great!",
+        };
     },
 
-    componentDidMount: function () {
-        if(!this.isMounted()){
-return;
+    childContextTypes: {
+        disabled: React.PropTypes.string,
+    },
+    getChildContext() {
+        return {
+            disabled: 'true',
+        };
+    },
+
+    componentDidMount() {
+        if (!this.isMounted()) {
+            return;
         }
-        setTimeout(function () {
+        setTimeout(() => {
             var columns = [{
                 field: 'NO',
                 title: '编号'
@@ -46,19 +47,19 @@ return;
                     title: '名称'
                 }];
             this.setState({ columns: columns });
-        }.bind(this), 5000);
+        }, 5000);
     },
-    changeName: function (item) {
+    changeName(item) {
         console.log(item);
     },
-    componentWillMount: function () {
+    componentWillMount() {
         // intervalTimer = null;
     },
-    shouldComponentUpdate: function (nextProps, nextState, nextContext) {
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
         // console.log("should update?");
         return true;
         if (this.props.name == nextProps.name) {
-            console.log("same props name:" + this.props.name);
+            console.log('same props name:' + this.props.name);
             return false;
         }
         console.log(nextProps);
@@ -66,8 +67,7 @@ return;
         return true;
     },
 
-    render: function () {
-    
+    render() {
         // var columns = [{
         //     field: 'NO',
         //     title: '编号'
@@ -76,19 +76,19 @@ return;
         //         title: '名称'
         //     }];
 
-        return <div>
+        return (<div>
             <div>   {this.state.name + " ---test"}</div>
-                <div>
+            <div>
                 <ul>
-                <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
-                <li><Link to="/datatable" activeStyle={{color: 'green'}} >DataTable</Link></li>
-                <li><Link to="/myform" activeStyle={{fontSize:'24px'}}>My Form</Link></li>
+                    <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
+                    <li><Link to="/datatable" activeStyle={{ color: 'green' }} >DataTable</Link></li>
+                    <li><Link to="/myform" activeStyle={{ fontSize: '24px' }}>My Form</Link></li>
                 </ul>
-                
-                </div>
+
+            </div>
             {
                 (new Date()).toTimeString()
-                            // <MyForm formSubmit={(item) => this.changeName(item) } />
+                // <MyForm formSubmit={(item) => this.changeName(item) } />
             }
             {
 
@@ -107,8 +107,8 @@ return;
                 //     (new Date()).toTimeString()
                 // }
             }
-        </div>;
-    }
+        </div>);
+    },
 });
 
 // ReactDOM.render(<App name='haisa pan love xiaoxiao & youyou' />, document.getElementById('root'))

@@ -10,9 +10,7 @@ import MyForm from './components/MyForm/myForm';
         // }
 ReactDOM.render(
     <Router history={browserHistory} >
-        <Route path="/" component={App}>
-
-            
+        <Route path="/" component={App}>            
             <Route path="/datatable"  component={DataTable} ></Route>
             <Route path="/myform" component={MyForm}></Route>
         </Route>

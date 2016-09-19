@@ -1,22 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
-var DataTable = React.createClass({
+const DataTable = React.createClass({
 
-    propTypes: {
+  propTypes: {
         // columns: React.PropTypes.array.isRequired
         // data: React.PropTypes.Array.isRequired
-    },
-    getDefaultProps:function(){
-        return {
-            columns:[]
-        }
-    },
+  },
+  getDefaultProps() {
+    return {
+      columns: [],
+    };
+  },
 
-    render: function () {
-        console.log(this.props.data);
+  render() {
+    console.log(this.props.data);
 
-        return (
+    return (
             <div>
             <h1>DataTable</h1>
                 <table>
@@ -24,7 +24,7 @@ var DataTable = React.createClass({
                         <tr>
                             {
                                 this.props.columns.map((item) => {
-                                    return <td key={item.field}>{item.field}</td>
+                                  return <td key={item.field}>{item.field}</td>;
                                 })
                             }
                         </tr>
@@ -37,7 +37,7 @@ var DataTable = React.createClass({
                 }
             </div>
         );
-    }
+  },
 
 });
 
