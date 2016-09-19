@@ -85,6 +85,7 @@ const App = React.createClass({
                     <li><Link to="/myform" activeStyle={{ fontSize: '24px' }}>My Form</Link></li>
                 </ul>
 
+ <input type="text"  />
             </div>
             {
                 (new Date()).toTimeString()

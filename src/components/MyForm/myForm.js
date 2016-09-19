@@ -36,7 +36,7 @@ var MyForm = React.createClass({
 
         return (
             <div>
-                <h2>My Form</h2>
+                <h2>My Form  e d f</h2>
                 <form action="post" onSubmit={this.handleSubmit} >
                     <input type="text" value={this.state.name} onChange={this.handleChange} ref="name" />
                     <br />  <br />

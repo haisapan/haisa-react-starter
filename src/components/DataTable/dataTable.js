@@ -18,7 +18,7 @@ const DataTable = React.createClass({
 
     return (
             <div>
-            <h1>DataTable</h1>
+            <h1>DataTable-section</h1>
                 <table>
                     <tbody>
                         <tr>
